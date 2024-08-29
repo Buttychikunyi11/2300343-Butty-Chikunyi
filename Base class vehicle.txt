@@ -1,0 +1,31 @@
+# Base class Vehicle
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def start_engine(self):
+        print(f"Starting {self.make} {self.model} engine...")
+
+# Derived class Car
+class Car(Vehicle):
+    def start_engine(self):
+        print(f"Starting {self.make} {self.model} car engine... Vroom!")
+
+# Derived class Truck
+class Truck(Vehicle):
+    def start_engine(self):
+        print(f"Starting {self.make} {self.model} truck engine... Rumble!")
+
+# Function to demonstrate polymorphism
+def start_vehicle_engine(vehicle):
+    vehicle.start_engine()
+
+# Create vehicle objects
+car = Car("Toyota", "Corolla")
+truck = Truck("Ford", "F-150")
+
+# Demonstrate polymorphism
+start_vehicle_engine(car)  # Output: Starting Toyota Corolla car engine... Vroom!
+start_vehicle_engine(truck)  # Output: Starting Ford F-150 truck engine... Rumble!
+
